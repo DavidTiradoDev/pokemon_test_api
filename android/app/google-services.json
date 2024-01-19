@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "521005117441",
+    "project_id": "pokemon-api-test-c9367",
+    "storage_bucket": "pokemon-api-test-c9367.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521005117441:android:56c6b5ec1d368e38161000",
+        "android_client_info": {
+          "package_name": "com.example.testing_model"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPxC8Hb_l8-WBbudeCI1lYfP2G6wO8sKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
