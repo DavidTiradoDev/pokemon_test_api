@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-import 'package:testing_model/home/home_injection.dart';
+import 'package:testing_model/login/login_injection.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  try {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
+  } catch (e) {
+    print('Error al inicializar Firebase: $e');
+  }
+
   runApp(const MyApp());
 }
 
@@ -18,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: HomeInjection.injection(),
+      home: LoginInjection.injection(),
       theme: ThemeData.dark(),
     );
   }

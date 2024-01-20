@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDRGWzL0RbMV_FirabnGc35g-L4Htz417s',
+    appId: '1:521005117441:web:aa6f8e11acadf761161000',
+    messagingSenderId: '521005117441',
+    projectId: 'pokemon-api-test-c9367',
+    authDomain: 'pokemon-api-test-c9367.firebaseapp.com',
+    storageBucket: 'pokemon-api-test-c9367.appspot.com',
+    measurementId: 'G-93XD3FYEQ8',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBPxC8Hb_l8-WBbudeCI1lYfP2G6wO8sKU',
     appId: '1:521005117441:android:56c6b5ec1d368e38161000',
@@ -64,5 +68,14 @@ class DefaultFirebaseOptions {
     projectId: 'pokemon-api-test-c9367',
     storageBucket: 'pokemon-api-test-c9367.appspot.com',
     iosBundleId: 'com.example.testingModel',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBxGzbTkHNu3YhY5uu-QUCAcAkRLiNYd20',
+    appId: '1:521005117441:ios:1e33e4f82c2fef73161000',
+    messagingSenderId: '521005117441',
+    projectId: 'pokemon-api-test-c9367',
+    storageBucket: 'pokemon-api-test-c9367.appspot.com',
+    iosBundleId: 'com.example.testingModel.RunnerTests',
   );
 }
