@@ -37,24 +37,50 @@ class LoginPage extends StatelessWidget {
               style: GoogleFonts.nunito(fontSize: 20),
             ),
           ),
+          const SizedBox(
+            height: 10,
+          ),
           TextFormField(
             controller: _emailController,
-            decoration: const InputDecoration(
-              label: Text('Email'),
+            decoration: InputDecoration(
+              label: Text(
+                'Email',
+                style: GoogleFonts.nunito(),
+              ),
+              border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    20,
+                  ),
+                ),
+              ),
             ),
           ),
           const SizedBox(
-            height: 5,
+            height: 15,
           ),
           TextFormField(
             obscureText: true,
             controller: _passwordController,
-            decoration: const InputDecoration(
-              label: Text('Contraseña'),
+            decoration: InputDecoration(
+              label: Text(
+                'Contraseña',
+                style: GoogleFonts.nunito(),
+              ),
+              border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    20,
+                  ),
+                ),
+              ),
             ),
           ),
           const SizedBox(
             height: 10,
+          ),
+          const SizedBox(
+            height: 20,
           ),
           ElevatedButton(
             onPressed: () {
@@ -79,8 +105,23 @@ class LoginPage extends StatelessWidget {
                 },
               );
             },
-            child: const Text('Entrar'),
+            child: Text(
+              'Entrar',
+              style: GoogleFonts.nunito(fontSize: 20),
+            ),
           ),
+          const SizedBox(
+            height: 5,
+          ),
+          InkWell(
+            onTap: () {},
+            child: Text(
+              'Registrar',
+              style: GoogleFonts.nunito(
+                fontSize: 15,
+              ),
+            ),
+          )
         ],
       ),
     ));
