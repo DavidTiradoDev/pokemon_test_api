@@ -14,8 +14,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final authProvider = Provider.of<LoginProvider>(context);
-    final TextEditingController _emailController = TextEditingController();
-    final TextEditingController _passwordController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -44,7 +44,8 @@ class LoginPage extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
-              controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
+              controller: emailController,
               decoration: InputDecoration(
                 label: Text(
                   'Email',
@@ -64,7 +65,7 @@ class LoginPage extends StatelessWidget {
             ),
             TextFormField(
               obscureText: true,
-              controller: _passwordController,
+              controller: passwordController,
               decoration: InputDecoration(
                 label: Text(
                   'Contraseña',
@@ -87,8 +88,8 @@ class LoginPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                String email = _emailController.text;
-                String password = _passwordController.text;
+                String email = emailController.text;
+                String password = passwordController.text;
                 authProvider.signIn(email, password).then(
                   (success) {
                     if (success) {

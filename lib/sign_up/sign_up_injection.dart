@@ -11,7 +11,7 @@ class SignUpInjection {
   static Widget injection() {
     return ListenableProvider<SignUpProvider>(
       create: (context) => SignUpProvider(),
-      child: const SignUpPage(),
+      child: SignUpPage(),
     );
   }
 }
